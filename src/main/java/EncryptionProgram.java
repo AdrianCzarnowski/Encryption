@@ -8,7 +8,7 @@ public class EncryptionProgram {
     private Scanner scanner;
     private Random random;
     private ArrayList<Character> list;
-    private ArrayList<Character> shuffledlist;
+    private ArrayList<Character> shuffledList;
     private char character;
     private char[] letters;
 
@@ -17,7 +17,7 @@ public class EncryptionProgram {
         scanner = new Scanner(System.in);
         random = new Random();
         list = new ArrayList<>();
-        shuffledlist = new ArrayList<>();
+        shuffledList = new ArrayList<>();
         character = ' ';
 
         newKey();
@@ -58,14 +58,14 @@ public class EncryptionProgram {
     private void newKey() {
         character = ' ';
         list.clear();
-        shuffledlist.clear();
+        shuffledList.clear();
 
         for (int i = 32; i < 127; i++) {
             list.add(Character.valueOf(character));
             character++;
         }
-        shuffledlist = new ArrayList<>(list);
-        Collections.shuffle(shuffledlist);
+        shuffledList = new ArrayList<>(list);
+        Collections.shuffle(shuffledList);
         System.out.println("New key has been generated");
     }
 
@@ -75,7 +75,7 @@ public class EncryptionProgram {
             System.out.print(x);
         }
         System.out.println();
-        for (Character x : shuffledlist) {
+        for (Character x : shuffledList) {
             System.out.print(x);
         }
         System.out.println();
@@ -91,7 +91,7 @@ public class EncryptionProgram {
 
             for (int j = 0; j < list.size(); j++) {
                 if (letters[i] == list.get(j)) {
-                    letters[i] = shuffledlist.get(j);
+                    letters[i] = shuffledList.get(j);
                     break;
                 }
             }
@@ -111,8 +111,8 @@ public class EncryptionProgram {
 
         for (int i = 0; i < letters.length; i++) {
 
-            for (int j = 0; j < shuffledlist.size(); j++) {
-                if (letters[i] == shuffledlist.get(j)) {
+            for (int j = 0; j < shuffledList.size(); j++) {
+                if (letters[i] == shuffledList.get(j)) {
                     letters[i] = list.get(j);
                     break;
                 }
